@@ -1,0 +1,1 @@
+A console application for managing student information.Using inheritance and functions to calculate average marks of both cateogry student.Implemented exception handling fpr grade input ensuring it's a valid input.
