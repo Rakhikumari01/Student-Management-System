@@ -10,7 +10,7 @@ namespace Student_Management_System
     {
         static void Main(string[] args)
         {
-
+            //creating object of regular student
             RegularStudent rs = new RegularStudent("akhil","21");
            
             rs.DisplayRegularSubjects();
@@ -21,7 +21,7 @@ namespace Student_Management_System
             Console.WriteLine();
             Console.WriteLine($"{rs.Name} average grade: {regularAverageGrade}");
 
-
+            //creating object of honor student
             HonorsStudent h = new HonorsStudent("abhishek", "25");
             Console.WriteLine();
             h.DisplayhonorsSubjects();

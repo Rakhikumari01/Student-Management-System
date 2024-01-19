@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Management_System
 {
+    //subject class which stores subject of students in a list
     public class Subject
     {
 
@@ -20,6 +21,7 @@ namespace Student_Management_System
            
         }
 
+        //function to display info
         public void displayInfo()
         {
             Console.WriteLine($"subject code is: {SubjectCode}");

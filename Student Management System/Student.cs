@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Student_Management_System
-{
+{   
+    
+    //student class(parent class)
     public class Student
     {
         public String Name { get; set; }
         public  String Age { get; set; }
        
+        //list which stores subject class
         public List<Subject> subjects { get; set; }
       
         public Student(String name,String age)
@@ -26,6 +29,7 @@ namespace Student_Management_System
     }
 
 
+    //child class regularStudent inheriting parent student
     public class RegularStudent : Student
     {
 
@@ -67,6 +71,12 @@ namespace Student_Management_System
             }
         }
 
+
+        /// <summary>
+        /// this method add grades,
+        /// return type is void,
+        /// exception handling in taking grade parameter
+        /// </summary>
         public void AddGrade()
         {
             try
@@ -84,6 +94,11 @@ namespace Student_Management_System
             }
         }
 
+        /// <summary>
+        ///  calculating average grade of input maeks
+        /// </summary>
+        /// <returns></returns>
+
         public double CalculateRegularAverageGrade()
         {
             if (Grades.Count == 0)
@@ -91,7 +106,7 @@ namespace Student_Management_System
                 Console.WriteLine("No grades available for calculation.");
                 return 0.0;
             }
-
+            
             double totalGrade = Grades.Sum()/Grades.Count;
             return totalGrade;
         }
@@ -99,6 +114,7 @@ namespace Student_Management_System
 
     }
 
+    //honor student inheriting student
     public class HonorsStudent : Student
     {
         List<int> Grade = new List<int>();
@@ -122,6 +138,7 @@ namespace Student_Management_System
         }
 
 
+        //exception handling
         public void addHGrade()
         {
             try
@@ -150,6 +167,7 @@ namespace Student_Management_System
                 return 0.0;
             }
 
+            //using linq to calculate average marks
             double totalGrade = subjects.SelectMany(subject => Grade).Average();
             return totalGrade;
         }
